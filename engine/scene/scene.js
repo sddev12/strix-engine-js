@@ -1,5 +1,7 @@
 import readlinesync from 'readline-sync'
 
+// Options are attached to a scene. They have a text property and an action function
+// which defines the action associated with the function
 export class Option {
     Text = ""
     Action = () => { }
@@ -10,9 +12,16 @@ export class Option {
     }
 }
 
+// Scenes are the building blocks of the game
+// The user creates scenes with options and actions
 export class Scene {
+    // Name of the scene
     Name = ""
+
+    // Text to be displated to the player when the scence runs
     Text = ""
+
+    // List of options the player can select in the scene
     Options = []
 
     constructor(Name, Text, Options) {
@@ -21,6 +30,8 @@ export class Scene {
         this.Options = Options
     }
 
+    // Runs the scene, waits for the player to choose an option
+    // then triggers the realted action
     Run() {
         console.log(`=== ${this.Name} ===\n`)
         console.log(`${this.Text}\n`)
