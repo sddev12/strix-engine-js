@@ -1,7 +1,7 @@
 import readlinesync from 'readline-sync'
 
 // Options are attached to a scene. They have a text property and an action function
-// which defines the action associated with the function
+// which defines the action associated with the option
 export class Option {
     Text = ""
     Action = () => { }
