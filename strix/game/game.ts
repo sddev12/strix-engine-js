@@ -3,14 +3,14 @@ import { Scene } from '../scene/scene'
 export default class Game {
 
     // Map of scenes that make up the game
-    scenes = new Map()
+    scenes: Map<string, Scene> = new Map()
 
     // Tracks the current active scene
-    currentScene: Scene
+    currentScene: Scene | undefined
 
     // Define the entry scene for the game
-    setStartScene(scene: string) {
-        this.currentScene = this.scenes.get(scene)
+    setStartScene(sceneName: string) {
+        this.currentScene = this.scenes.get(sceneName)
     }
 
     // Add a scene to the game object
@@ -19,8 +19,8 @@ export default class Game {
     }
 
     // Swtich to another scene
-    changeScene(scene: string) {
-        this.currentScene = this.scenes.get(scene)
+    changeScene(sceneName: string) {
+        this.currentScene = this.scenes.get(sceneName)
     }
 
     // Run the game loop

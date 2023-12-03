@@ -37,14 +37,14 @@ export class Scene {
     // Runs the scene, waits for the player to choose an option
     // then triggers the realted action
     Run() {
-        console.log(`=== ${this.name} ===\n`)
+        console.log(`=== ${this.name.toUpperCase()} ===\n`)
         console.log(`${this.text}\n`)
 
         this.options.forEach((option, index) => {
-            console.log(`${index + 1}: ${option.text}\n`)
+            console.log(`${index + 1}: ${option.text}`)
         })
 
-        const choice = readlinesync.question('Choose wisely: \n')
+        const choice = readlinesync.question('\nChoose wisely: \n')
         const intChoice = parseInt(choice)
         if (intChoice >= 1 && intChoice <= this.options.length) {
             this.options[intChoice - 1].action()
