@@ -13,7 +13,7 @@ game.addScene(mainMenu)
 game.addScene(fortEntrance)
 
 // Define your starting scene, the very first scene that runs
-game.setStartScene('Main Menu')
+game.setStartScene('Fort Reyark')
 
 // Run the game loop
 game.Run()
