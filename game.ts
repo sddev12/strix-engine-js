@@ -1,6 +1,6 @@
-import Game from './engine/game/game.js'
-import { mainMenu } from './scenes/mainMenu.js'
-import { fortEntrance } from './scenes/fortEntrance.js'
+import Game from './strix'
+import { mainMenu } from './scenes/mainMenu'
+import { fortEntrance } from './scenes/fortEntrance'
 
 // This is the entrypoint for the game
 

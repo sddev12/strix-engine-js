@@ -1,5 +1,5 @@
-import { Scene, Option } from '../engine/scene/scene.js'
-import { game } from '../game.js'
+import { Scene, Option } from '../strix'
+import { game } from '../game'
 
 export const mainMenu = new Scene(
     'Main Menu', 

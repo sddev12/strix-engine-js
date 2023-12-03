@@ -1,34 +1,34 @@
-import { Scene } from '../scene/scene.js'
+import { Scene } from '../scene/scene'
 
 export default class Game {
 
     // Map of scenes that make up the game
-    Scenes = new Map()
+    scenes = new Map()
 
     // Tracks the current active scene
-    CurrentScene = new Scene()
+    currentScene: Scene
 
     // Define the entry scene for the game
-    setStartScene(scene) {
-        this.CurrentScene = this.Scenes.get(scene)
+    setStartScene(scene: string) {
+        this.currentScene = this.scenes.get(scene)
     }
 
     // Add a scene to the game object
-    addScene(scene) {
-        this.Scenes.set(`${scene.Name}`, scene)
+    addScene(scene: Scene) {
+        this.scenes.set(`${scene.name}`, scene)
     }
 
     // Swtich to another scene
-    changeScene(scene) {
-        this.CurrentScene = this.Scenes.get(scene)
+    changeScene(scene: string) {
+        this.currentScene = this.scenes.get(scene)
     }
 
     // Run the game loop
     Run() {
         while (true) {
             console.clear()
-            if (this.CurrentScene) {
-                this.CurrentScene.Run()
+            if (this.currentScene) {
+                this.currentScene.Run()
             } else {
                 console.log('ERROR: No scene set. Exiting Game')
                 break
