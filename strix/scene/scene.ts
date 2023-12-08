@@ -34,10 +34,21 @@ export class Scene {
         this.options = options
     }
 
+    private PrintBanner() {
+        let bannerEdge = "=".repeat(this.name.length + 6)
+        let bannerPading = " ".repeat(Math.floor((bannerEdge.length / 2) - Math.floor(this.name.length / 2)))
+
+        console.log(`
+            ${bannerEdge}
+            ${bannerPading}${this.name.toUpperCase()}
+            ${bannerEdge}
+        `)
+    }
+
     // Runs the scene, waits for the player to choose an option
     // then triggers the realted action
     Run() {
-        console.log(`=== ${this.name.toUpperCase()} ===\n`)
+        this.PrintBanner()
         console.log(`${this.text}\n`)
 
         this.options.forEach((option, index) => {
