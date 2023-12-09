@@ -1,4 +1,6 @@
-import { Scene } from '../scene/scene'
+import { Scene, Action } from '../scene/scene'
+import DefaultOptions from './defaultOptions'
+
 
 export default class Game {
 
@@ -7,6 +9,13 @@ export default class Game {
 
     // Tracks the current active scene
     currentScene: Scene | undefined
+
+    // Map of default options that can be called on every scene
+    defaultOptions?: DefaultOptions = new Map()
+
+    addDefaultOption(command: string, action: Action) {
+        this.defaultOptions?.set(command, action)
+    }
 
     // Define the entry scene for the game
     setStartScene(sceneName: string) {

@@ -1,8 +1,9 @@
 import readlinesync from 'readline-sync'
+import { game } from '../../game';
 
 // An Action is a custom function to handle the logic that is triggered
 // when the user chooses it's associated Option
-type Action = () => void
+export type Action = () => void
 
 // options are attached to a scene. They have a text property and an action function
 // which defines the action associated with the option
@@ -28,13 +29,17 @@ export class Scene {
     // List of options the player can select in the scene
     options: Option[]
 
-    constructor(name: string, text: string, options: Option[]) {
+    constructor(
+        name: string, 
+        text: string, 
+        options: Option[],
+    ) {
         this.name = name
         this.text = text
         this.options = options
     }
 
-    private PrintBanner() {
+    private printBanner() {
         let bannerEdge = "=".repeat(this.name.length + 6)
         let bannerPading = " ".repeat(Math.floor((bannerEdge.length / 2) - Math.floor(this.name.length / 2)))
 
@@ -48,7 +53,7 @@ export class Scene {
     // Runs the scene, waits for the player to choose an option
     // then triggers the realted action
     Run() {
-        this.PrintBanner()
+        this.printBanner()
         console.log(`${this.text}\n`)
 
         this.options.forEach((option, index) => {
@@ -56,6 +61,9 @@ export class Scene {
         })
 
         const choice = readlinesync.question('\nChoose wisely: \n')
+        if (game.defaultOptions?.get(choice) != undefined) {
+            game.defaultOptions?.get(choice)!();
+        }
         const intChoice = parseInt(choice)
         if (intChoice >= 1 && intChoice <= this.options.length) {
             this.options[intChoice - 1].action()
