@@ -4,8 +4,7 @@
   "description": "A text based adventure game",
   "main": "main.js",
   "scripts": {
-    "start": "npx tsc && node ./dist/game.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx tsc && node ./dist/game.js"
   },
   "repository": {
     "type": "git",
