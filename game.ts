@@ -4,6 +4,7 @@ import { fortEntrance } from './scenes/fortEntrance'
 
 // This is the entrypoint for the game
 
+// A default option for exiting the game
 function exitGame(): void {
     process.exit(0)
 }
@@ -13,7 +14,6 @@ function exitGame(): void {
 export const game = new Game()
 
 game.addDefaultOption('exit', exitGame)
-console.log(game.defaultOptions)
 
 // Add your scenes to the game object
 game.addScene(mainMenu)
