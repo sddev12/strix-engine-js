@@ -1,4 +1,4 @@
-# strix JS
+# strix
 
 A game engine in JavaScript for text based adventure games.
 Still very early in development
@@ -12,7 +12,7 @@ Strix provides the Game and Scene classes.
 
 ### Game
 The Game class is the 'global' game object.
-This is where al game state is stored. It's also responsible for the game loop. 
+This is where all game state is stored. It's also responsible for the game loop. 
 
 <hr>
 
