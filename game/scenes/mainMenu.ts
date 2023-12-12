@@ -1,5 +1,5 @@
-import { Scene, Option } from '../strix'
-import { game } from '../game'
+import { Scene, Option } from '../../strix'
+import { game } from '../../game'
 
 export const mainMenu = new Scene(
     'Fort Reyark', 

@@ -1,5 +1,5 @@
-import { Scene, Option } from '../strix'
-import { game } from '../game'
+import { Scene, Option } from '../../strix'
+import { game } from '../../game'
 
 // This is how to implement a new scene
 export const fortEntrance = new Scene(
